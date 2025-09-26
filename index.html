@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adachi Ward Street Gang Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="adachi.css" rel="stylesheet">
+    <!-- Favicon and touch icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/origin_adachi.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/origin_adachi.png">
+    <link rel="apple-touch-icon" href="images/origin_adachi.png">
+    <meta name="theme-color" content="#0a0a0a">
+
+</head>
+<body class="preload-hidden">
+    <!-- Simple Fullscreen Loader (replaced) -->
+    <div id="siteLoader" class="site-loader hidden" aria-hidden="true" role="status" aria-label="Loading">
+        <div class="site-loader__inner">
+            <img class="site-loader__logo" src="images/origin_adachi.png" alt="ADACHI" />
+            <div class="site-loader__title">ADACHI</div>
+            <div class="site-loader__bar" aria-hidden="true">
+                <div class="site-loader__progress" style="width:0%"></div>
+            </div>
+            <div class="site-loader__hint">Loading…</div>
+        </div>
+    </div>
+    <!-- Sound consent dialog (appears before loader) -->
+    <div id="soundConsent" class="sound-consent" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="sound-consent__inner">
+            <h2>このサイトでは音が鳴ります</h2>
+            <p>BGMの再生を許可しますか？</p>
+            <div class="sound-consent__actions">
+                <button id="consentOn" class="consent-btn">ON（再生）</button>
+                <button id="consentOff" class="consent-btn">OFF（再生しない）</button>
+            </div>
+        </div>
+    </div>
+    <!-- Animated Grid Background -->
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- Animated Shapes -->
+    <div class="shapes-container">
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-triangle"></div>
+        <div class="shape shape-square"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <img class="logo-svg" src="images/origin_adachi.png" alt="Adachi logo" />
+                <span class="logo-text">Adachi Ward Street Gang</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#gamelist" class="nav-link">game list</a></li>
+                <li><a href="#members" class="nav-link">Members</a></li>
+                <li><a href="#formation" class="nav-link">formation</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="text-rotator">
+                <div class="text-set active">
+                    <h1 class="glitch-text" data-text="FUTURE IS NOW">足立区ストリートギャング</h1>
+                    <p class="subtitle">"Adachi Ward Street Gang"</p>
+                </div>
+                <div class="text-set">
+                    <h1 class="glitch-text" data-text="BEYOND LIMITS">ストリートのルール、足立流</h1>
+                    <p class="subtitle">"Street Rules, Adachi Style."</p>
+                </div>
+                <div class="text-set">
+                    <h1 class="glitch-text" data-text="ELECTRIC DREAMS">俺達に手を出すのは火に手を出すのと同義だぜ</h1>
+                    <p class="subtitle">"Mess with Adachi, you mess with fire."</p>
+                </div>
+            </div>
+        </div>
+        <div class="cta-container">
+            <a href="#gamelist" class="cta-button cta-primary">プレイ中のゲーム</a>
+            <a href="#members" class="cta-button cta-secondary">所属メンバー 一覧</a>
+        </div>
+    </section>
+
+    <!-- game list Section with Tabs -->
+    <section class="gamelist" id="gamelist">
+        <h2 class="section-title">game list</h2>
+        <div class="gamelist-container">
+            <div class="gamelist-tabs">
+                <div class="tab-item active" data-tab="performance">
+                    <span class="tab-icon">✅</span>
+                    <span>League of Legends</span>
+                </div>
+                <div class="tab-item" data-tab="VALORANT">
+                    <span class="tab-icon">✅</span>
+                    <span>VALORANT</span>
+                </div>
+                <div class="tab-item" data-tab="STREET">
+                    <span class="tab-icon">✅</span>
+                    <span>STREET FIGHTER 6</span>
+                </div>
+                <div class="tab-item" data-tab="RUST">
+                    <span class="tab-icon">✅</span>
+                    <span>RUST</span>
+                </div>
+                <div class="tab-item" data-tab="Anime">
+                    <span class="tab-icon">✅</span>
+                    <span>Anime Music Quiz</span>
+                </div>
+            </div>
+            <div class="gamelist-content">
+                <div class="content-panel active" id="performance">
+                    <h3>League of Legends</h3>
+                    <p>『リーグ・オブ・レジェンド』は、ライアットゲームズが開発した基本プレイ無料のマルチプレイヤーオンラインバトルアリーナゲーム。2012年には、世界で最もプレイされたゲームソフトとなった。</p>
+                    <ul class="gamelist-list">
+                        <li>設立当初から活動しているゲーム</li>
+                        <li>メンバーの90%がプレイ経験者</li>
+                        <li>メンバーとのプレイはトロールピックも可能（プレイは真面目）</li>
+                        <li>TFT履修者多数</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="VALORANT">
+                    <h3>VALORANT</h3>
+                    <p>『VALORANT』は、ライアットゲームズが開発・運営しているファーストパーソン・シューティングゲーム ライアットゲームズによる初のFPSジャンルの作品であり、2020年6月2日に基本プレイ無料でリリースされた。</p>
+                    <ul class="gamelist-list">
+                        <li>2020年6月から活動開始</li>
+                        <li>メンバーの70%がプレイ経験者</li>
+                        <li>メンバーとのプレイはトロールピックも可能（プレイは真面目）</li>
+                        <li>メンバーの多くはゲーム内VCを利用</li>
+
+                    </ul>
+                </div>
+                <div class="content-panel" id="STREET">
+                    <h3>STREET FIGHTER 6</h3>
+                    <p>『ストリートファイター6』は、カプコンから2023年6月2日に発売された対戦型格闘ゲーム。</p>
+                    <ul class="gamelist-list">
+                        <li>2023年6月から活動開始</li>
+                        <li>メンバーの80%がプレイ経験者</li>
+                        <li>ディスコードサーバーで対戦相手募集も可能</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="RUST">
+                    <h3>RUST</h3>
+                    <p>『Rust』とは、Facepunch Studiosが開発したマルチプレイヤーサバイバルコンピュータゲームである。2013年12月に早期アクセス版として最初にリリースされ、2018年2月に正式版がリリースされた。</p>
+                    <ul class="gamelist-list">
+                        <li>2025年9月から活動開始</li>
+                        <li>メンバーの70%がプレイ経験者</li>
+                        <li>戦闘員、建築、ファーマー、各自で役割分担</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="Anime">
+                    <h3>Anime Music Quiz</h3>
+                    <p>「Anime Music Quiz」とは、Next World Gamesという開発元が提供する無料ゲームである。このゲームでは、アニメのオープニングやエンディング、BGMなどを聴いて、どの作品の曲かを当てる形式でアニメの音楽知識が試されるゲーム</p>
+                    <ul class="gamelist-list">
+                        <li>2021年3月から活動開始</li>
+                        <li>メンバーの50%がプレイ経験者</li>
+                        <li>オタクとヤンキーは紙一重、みんなアニメが大好き</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section (replaces Contact) -->
+    <section class="members" id="members">
+        <h2 class="section-title">Members</h2>
+        <div class="members-container">
+            <p class="members-intro">足立区ストリートギャングの主要メンバー紹介。各メンバーの役割や情報を掲載しています。</p>
+            <div class="member-cards-wrapper">
+                <button class="members-arrow left" aria-label="前のメンバー">◀</button>
+                <div class="member-cards" id="memberCards">
+                <div class="member-card" data-note="作戦と雑談の司令塔。クリエイティブで非常に多才。\n適当にやっているはずなのになぜか好転する場合が多い。\nただし、LOLではサポートなのにキルを取る異常者\n\nなかなかにエッジの利いたハンドルネームを使いこなすが\n今の所、永久BANされた名前は「月火水木金正恩」のみである">
+                    <img src="images/k.png" alt="Member 1" class="member-photo" onerror="this.onerror=null;this.src='images/k.png'">
+                    <h3 class="glitch-text member-name" data-text="フェミニストヴィーガン男爵 (KENTA)">フェミニストヴィーガン男爵 (KENTA)</h3>
+                    <p class="member-role">ギルドマスター / トロール担当</p>
+                    <p class="member-bio">オフメタとトロールを愛する　ギルドマスター</p>
+                </div>
+                <div class="member-card" data-note="最強のお笑い担当。\n意味不明なショットコールを出してメンバーにキレられるまでが流れ。\n\nエリオンのダンジョンボスに火力職ガンナーで挑み\nDPS302ダメージを叩き出した愛すべきトロール">
+                    <img src="images/y.png" alt="Member 2" class="member-photo" onerror="this.onerror=null;this.src='images/y.png'">
+                    <h3 class="glitch-text member-name" data-text="西ユウキ東">西ユウキ東</h3>
+                    <p class="member-role">元サブマスター / いじられ担当</p>
+                    <p class="member-bio">最悪のショットコーラー<br>※結婚を機に引退</p>
+                </div>
+                <div class="member-card" data-note="頼れるエース。\n試合を決める場面に強いタイプ。\nただし、知能指数が3~300まで秒ごとに変わる手帳持ち\n\n最近は超高層型事務所 (タワーマンション) に引っ越して\n組織 (会社) の指示役 (経営者) としても板についてきた。" data-modal-img="images/n2.png">
+                    <img src="images/n1.png" alt="Member 3" class="member-photo" onerror="this.onerror=null;this.src='images/n1.png'">
+                    <h3 class="glitch-text member-name" data-text="NOTME">NOTME</h3>
+                    <p class="member-role">サブマスター / フィジカル担当</p>
+                    <p class="member-bio">高いエイムと強い決定力でチームの勝利に貢献。</p>
+                </div>
+                <div class="member-card" data-note="頼れる兄貴。\n試合前後の交渉・恫喝の担当。\n圧倒的存在感を誇る男\nただし、存在感とは裏腹に種は薄い。\n\n興奮すると「ヨーゴ」と発言するが、\n関西圏で耳にする差別用語「ようご」という意味では決してなく、\n沖縄県の限定乳酸飲料、森永「ヨーゴ」の事を言っている。\n\nたぶん" data-modal-img="images/s2.png">
+                    <img src="images/s1.png" alt="Member 4" class="member-photo" onerror="this.onerror=null;this.src='images/s1.png'">
+                    <h3 class="glitch-text member-name" data-text="ハイビスカス品川">ハイビスカス品川</h3>
+                    <p class="member-role">サブマスター / 恫喝担当</p>
+                    <p class="member-bio">盛り上げ力と力強い恫喝でチームに貢献。</p>
+                </div>                                
+                <div class="member-card" data-note="試合中の読みが鋭い、分析と解析のスペシャリスト。\nただし、トイレが長く、痔持ちなのでINQする前に行かせる必要有。\n\nLOLではこの顔でシャコをBANするし\n最近はぜんまいざむらいにハマっている。" data-modal-img="images/na1.png">
+                    <img src="images/na1.png" alt="Member 5" class="member-photo" onerror="this.onerror=null;this.src='images/na1.png'">
+                    <h3 class="glitch-text member-name" data-text="scherwiz (NAOYA)">scherwiz (NAOYA)</h3>
+                    <p class="member-role">分析 / タンク担当</p>
+                    <p class="member-bio">試合の分析とチームの前衛を担当。チーム勝率向上の立役者。</p>
+                </div>
+                <div class="member-card" data-note="足立区生まれのベイビーフェイス。「エミネム」「ジブラ」も全部フェイク。\nメイジやアサシンを使いこなすチーム屈指の火力担当。\n\nただし、極度のシングルタスクなので、\n戦闘中は「倒す」か「退く」の指示しか聞けない\n\n椅子と女を殴るのが趣味" data-modal-img="images/ebida.png">
+                    <img src="images/ebida.png" alt="Member 6" class="member-photo" onerror="this.onerror=null;this.src='images/ebida.png'">
+                    <h3 class="glitch-text member-name" data-text="EVIDA">EVIDA</h3>
+                    <p class="member-role">メイジ / アサシン担当</p>
+                    <p class="member-bio">チームの火力を担当。メイジ？アサシン？火力なら任せろ。</p>
+                </div>
+                <div class="member-card" data-note="試合中の敵への妨害、攪乱のスペシャリスト。\nまたは、とにかくうるさい化け物。味方からも苦情が来るレベル。\n相手を浮足立たせたい時は彼を送れば大体上手くいく\nというか、送り込まないとこっちの鼓膜が破れる。\n\n一応、本気の時はディスコードをミュートにしてゲーム内VCのみで\n奇声を発するレベルの倫理観は持ち合わせている。">
+                    <img src="images/kachikachi.png" alt="Member 7" class="member-photo" onerror="this.onerror=null;this.src='images/kachikachi.png'">
+                    <h3 class="glitch-text member-name" data-text="KACHIKACHI">KACHIKACHI</h3>
+                    <p class="member-role">攪乱 / デスボイス担当</p>
+                    <p class="member-bio">妨害、攪乱を担当。意味の無い強い音が出たら大体コイツ。</p>
+                </div>      
+                <div class="member-card" data-note="敵への交渉、戦後処理、チームへの勧誘などを担当\nただし、大体はメンバーが荒らしまわった後なので\nクレーム窓口係になっている。\n\nメンバーの中でもかなり社交的で様々な人物と繋がりがあり、\nその観点からチーム唯一の良心と自負しているが...。\n\n実態はVRCでお砂糖を100人持つ色欲精神異常者。">
+                    <img src="images/Coslysgi.png" alt="Member 8" class="member-photo" onerror="this.onerror=null;this.src='images/Coslysgi.png'">
+                    <h3 class="glitch-text member-name" data-text="Coslysgi">Coslysgi</h3>
+                    <p class="member-role">ネゴシエーション / 前衛担当</p>
+                    <p class="member-bio">敵への交渉、チームへの勧誘、前衛を担当。</p>
+                </div>   
+                <div class="member-card" data-note="台湾「万華地区・龍山寺」からやって来たチーム随一のエージェント。\n職務上、別動隊として動くことが多い。\n\n一応、相手が中国語で暴言を吐いたらなんて言ってるか教えてくれる。\n更に余計な一言まで伝えてくれる。\n\n一度はチームを離れたが気が付いたらなんか戻っていた。\nあれ？なんだこいつ。">
+                    <img src="images/alf.png" alt="Member 9" class="member-photo" onerror="this.onerror=null;this.src='images/alf.png'">
+                    <h3 class="glitch-text member-name" data-text="Alfy">Alfy</h3>
+                    <p class="member-role">アサシン / 諜報担当</p>
+                    <p class="member-bio">敵の諜報、要人や火力の暗殺を担当。</p>
+                </div>     
+                <div class="member-card" data-note="九州から来た evidaの女\n雰囲気で舐められがちだが、意外なところでセンスを発揮する強さもある。\n\n同調圧力に弱いタイプで、evidaに拾われる前は\n九州の女の使命として、土間に正座してご飯を食べていた。\n\n\n※フィクションです。登場する思想は実在のものとは関係ありません。">
+                    <img src="images/non.png" alt="Member 10" class="member-photo" onerror="this.onerror=null;this.src='images/non.png'">
+                    <h3 class="glitch-text member-name" data-text="ちのん">ちのん</h3>
+                    <p class="member-role">女 / ゴミ捨て担当</p>
+                    <p class="member-bio">ファーム、炊事 洗濯 を担当。</p>
+                </div>                          
+                </div>
+                <button class="members-arrow right" aria-label="次のメンバー">▶</button>
+            </div>
+            <!-- Modal for enlarged member -->
+            <div id="memberModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+                <div class="modal-backdrop" id="modalBackdrop"></div>
+                <div class="modal-content" role="document" id="modalContent">
+                    <button class="modal-close" id="modalClose" aria-label="閉じる">✕</button>
+                    <div class="modal-body" id="modalBody">
+                        <!-- populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <!-- screenshots Section -->
+    <section class="screenshots" id="screenshots">
+        <h2 class="section-title">Screenshots</h2>
+        <div class="screenshots-container">
+            <button class="ss-btn ss-prev" aria-label="前のスライド">‹</button>
+            <div class="ss-viewport" tabindex="0" aria-roledescription="carousel">
+                <div class="ss-slides" id="ssSlides">
+                    <div class="ss-slide"><img loading="lazy" src="SS/s4.png" alt="リーグ・オブ・レジェンド"></div>
+                    <div class="ss-slide"><img loading="lazy" src="SS/s2.png" alt="キープディギング"></div>
+                    <div class="ss-slide"><img loading="lazy" src="SS/s3.png" alt="グランド・セフト・オート"></div>
+                    <div class="ss-slide"><img loading="lazy" src="SS/s1.png" alt="江戸川 競艇所"></div>
+                </div>
+            </div>
+            <button class="ss-btn ss-next" aria-label="次のスライド">›</button>
+        </div>
+        <div class="ss-dots" id="ssDots" aria-hidden="false"></div>
+
+        <!-- Screenshot modal (click image to view full) -->
+        <div id="ssModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+            <div id="ssModalBackdrop" class="modal-backdrop"></div>
+            <div class="modal-content" role="document">
+                <button id="ssModalClose" class="modal-close" aria-label="閉じる">×</button>
+                <div class="modal-body">
+                    <img id="ssModalImg" src="" alt="">
+                    <div class="meta">
+                        <h2 id="ssModalCaption" class="glitch-text"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- formation Section -->
+    <section class="formation" id="formation">
+        <h2 class="section-title">formation</h2>
+        <div class="formation-content">
+            <div class="formation-text">
+                <h2>足立区ストリートギャングの成り立ち</h2>
+                <p>足立区ストリートギャング――。<br>2020年、荒れ果てたネットの裏通りで産声を上げた伝説の愚連隊。</p>
+                <p>当初はPOEやコナンエグザイルといったゲームを徘徊する、<br>ただの野良犬集団にすぎなかった。<br>だが2021年、MMORPG「ELYON」の登場が彼らを覚醒させる。</p>
+                <p>そこで出会ったのは――</p>
+                <p>MMOでキャラの名前が住所だった男<strong>「フェミニストヴィーガン男爵」</strong><br>脳内フルスロットル、伝説のADHD<strong>「西ユウキ東」</strong><br>捕まってないだけの詐欺師<strong>「NOTME」</strong><br>父親がマウイ似の半グレ<strong>「ハイビスカス品川」</strong></p>
+                <p>この四人、まるで運命に導かれるように拳を交わし、<br>それぞれの場末コミュニティを寄せ集めて一大ギルドを形成。</p>
+                <p>「ELYON」終了後も彼らの絆は消えることなく、<br>新作のたびに現れては、常に “<strong>底辺・低民度・闇</strong>” を背負い続ける。</p>
+                <br>
+                <p> <h3 class="glitch-text formation-quote" data-text="街が荒れるとき、そこに奴らの影あり。">街が荒れるとき、そこに奴らの影あり。</h3></p>
+                <p> <h3 class="glitch-text formation-quote" data-text="足立区ストリートギャング――"><br>足立区ストリートギャング――</h3></p>
+                <p> <h3 class="glitch-text formation-quote2" data-text="伝説は、まだ序章にすぎない。"><br><strong>伝説は、まだ序章にすぎない。</strong></h3></p>
+            </div>
+            <div class="formation-visual">
+                <div class="formation-graphic"></div>
+            </div>
+        </div>
+        
+        <!-- Second row with reversed layout -->
+        <div class="formation-content" style="margin-top: 80px;">
+            <div class="formation-visual">
+                <div class="formation-graphic-alt">
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                </div>
+            </div>
+            <div class="formation-text">
+                <h2>足立区ストリートギャングの理念</h2>
+                <p>我ら足立区ストリートギャングは、ゲームの世界において――<br>“底辺・低民度・闇” を自ら背負う事を誇りとする。</p>
+                <p><strong>寄せ集めの誇り</strong></p>
+                <p>歩く個人情報セルフ開示、伝説級のADHD、<br>捕まってない詐欺師、マウイ似の半グレ――<br>どんな肩書きであろうとも、集まればギルドになる。</p><br>
+                <p><strong>適当の美学</strong></p>
+                <p>攻略よりもネタ、勝利よりも笑い。<br>真剣な者の横で、全力でふざけ煽り散らかす。</p>   <br> 
+                <p><strong>バカの継承</strong></p>
+                <p>どのゲームでもバカを続けること。<br>民度の低さを伝統芸能として次代へ受け継ぐこと。</p><br>
+                <p><strong>友情と抗争の両立</strong></p>                                              
+                <p>仲良く喧嘩し、喧嘩しながら仲良くする。<br>裏切りも誤BANも、全部ストーリーの一部。</p><br>
+                <br>
+                <p>――以上の理念のもと、足立区ストリートギャングはこれからも<br>「ゲーム界の路地裏」から世界をざわつかせていく。</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://x.com/ramiekenta1214"target="_blank" >KENTA/X</a>
+                <a href="https://discord.gg/fTkfPTqXUc"target="_blank">discord</a>
+                <a href="https://www.twitch.tv/adachi_street_gang"target="_blank">twitch</a>
+            </div>
+            <p class="copyright">© 2025 ADACHI WRAD STREET GANG</p>
+        </div>
+    </footer>
+    <!-- Inline styles and scripts for members carousel + modal -->
+    <style>
+    /* Carousel wrapper and arrows */
+.member-cards-wrapper{display:flex;align-items:center;gap:12px;margin-top:20px}
+.members-arrow{background:rgba(0,0,0,0.6);color:#fff;border:0;padding:10px 12px;border-radius:6px;cursor:pointer;font-size:18px}
+.members-arrow:focus{outline:2px solid #00B2FF}
+    .member-cards{display:flex;gap:18px;overflow:hidden;scroll-behavior:smooth;padding:10px}
+    .member-card{flex:0 0 260px;background:rgba(255,255,255,0.03);padding:16px;border-radius:10px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,0.4);cursor:pointer}
+    .member-photo{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+    /* Modal styles */
+    .modal{display:none;position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center}
+    .modal[aria-hidden="false"]{display:flex}
+    .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px)}
+    .modal-content{position:relative;background:#0b0b0b;color:#fff;padding:20px;border-radius:12px;max-width:900px;width:90%;max-height:90vh;overflow:auto;z-index:2;box-shadow:0 10px 40px rgba(0,0,0,0.7)}
+    .modal-close{position:absolute;right:12px;top:12px;background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
+    .modal-body{display:flex;gap:20px;align-items:flex-start}
+    .modal-body img{width:320px;height:320px;object-fit:cover;border-radius:8px}
+    .modal-body .meta{flex:1}
+
+    /* Modal typography adjustments: make modal text smaller for better layout */
+    .modal-body .glitch-text { font-size: 1.25rem !important; line-height: 1.15; }
+    .modal-body .meta h2 { font-size: 1.1rem; margin: 0 0 8px; font-weight:700; }
+    .modal-body .meta .member-role { font-size: 0.95rem; margin-bottom:6px; }
+    .modal-body .meta p { font-size: 0.95rem; opacity: 0.9; }
+
+    /* Modal note: per-member short message shown only when modal opens */
+    .modal-note { margin-top:10px; font-size:0.95rem; color:#dcdcdc; opacity:0; transform:translateY(6px); }
+    .modal-note.show { animation: modalNoteIn 320ms ease-out forwards; }
+    @keyframes modalNoteIn { from { opacity:0; transform:translateY(6px);} to { opacity:1; transform:translateY(0);} }
+
+    /* Responsive: reduce sizes on small screens and ensure image scales */
+    @media(max-width:700px){
+        .modal-body{flex-direction:column;align-items:center}
+        .modal-body img{width:80%;height:auto}
+        .modal-body .glitch-text { font-size: 1rem !important; }
+        .modal-body .meta h2 { font-size: 1rem; }
+        .modal-body .meta p { font-size: 0.95rem; }
+    }
+
+    /* Responsive tweaks */
+    @media(max-width:700px){.modal-body{flex-direction:column;align-items:center}.modal-body img{width:80%;height:auto}}
+    
+    /* Specific smaller quote style in formation section (line ~219) */
+    .formation-quote { font-size: 1.5rem; line-height:1.2; font-weight:700; letter-spacing:0.02em; }
+    @media (max-width:700px) {
+        .formation-quote { font-size: 0.95rem; }
+    }
+
+    .formation-quote2 { font-size: 2rem; line-height:1.2; font-weight:700; letter-spacing:0.02em; }
+    @media (max-width:700px) {
+        .formation-quote2 { font-size: 0.95rem; }
+    }
+    
+    </style>
+
+    <!-- Sound consent styles -->
+    <style>
+    .sound-consent{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#000;z-index:3000}
+    .sound-consent__inner{background:#0b0b0b;color:#fff;padding:24px;border-radius:12px;max-width:420px;width:92%;text-align:center;border:1px solid rgba(255,61,148,0.08);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+    .sound-consent__inner h2{margin-bottom:8px;font-family:Orbitron,monospace}
+    .sound-consent__inner p{margin-bottom:16px;opacity:0.9}
+    .sound-consent__actions{display:flex;gap:12px;justify-content:center}
+    .consent-btn{padding:10px 14px;border-radius:8px;border:0;background:linear-gradient(90deg,#FF3D94,#00B2FF);color:#fff;cursor:pointer}
+    .consent-btn:focus{outline:2px solid #00B2FF}
+    </style>
+
+    <script>
+    // Members carousel navigation and modal
+    (function(){
+        const leftBtn = document.querySelector('.members-arrow.left');
+        const rightBtn = document.querySelector('.members-arrow.right');
+        const cards = document.getElementById('memberCards');
+
+        function getCardWidth(){
+            const first = cards.querySelector('.member-card');
+            if(!first) return 278;
+            const gap = parseInt(getComputedStyle(cards).gap) || 18;
+            return first.offsetWidth + gap;
+        }
+
+        function scrollLeft(){ cards.scrollBy({left: -getCardWidth(), behavior:'smooth'}); }
+        function scrollRight(){ cards.scrollBy({left: getCardWidth(), behavior:'smooth'}); }
+
+        leftBtn.addEventListener('click', scrollLeft);
+        rightBtn.addEventListener('click', scrollRight);
+        window.addEventListener('resize', ()=>{/* no-op but ensures getCardWidth uses up-to-date measurements */});
+
+        // Modal
+        const modal = document.getElementById('memberModal');
+        const modalBody = document.getElementById('modalBody');
+        const modalClose = document.getElementById('modalClose');
+        const modalBackdrop = document.getElementById('modalBackdrop');
+
+        // Helper: escape HTML to avoid XSS, but we'll allow <br> as newline marker
+        function escapeHtml(str){
+            return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+        }
+
+        function formatNote(note){
+            if(!note) return '';
+            // convert escaped backslash-n sequences to real newlines
+            note = note.replace(/\\n/g,'\n');
+            // accept literal <br> tags as newline markers
+            note = note.replace(/<br\s*\/?>/gi,'\n');
+            // escape HTML to avoid injection
+            const escaped = escapeHtml(note);
+            // convert newlines to <br>
+            return escaped.replace(/\r\n|\r|\n/g,'<br>');
+        }
+
+        function openModalFromCard(card){
+            // If a modal-specific image is provided, use it; otherwise clone the card image
+            const modalImgSrc = card.dataset.modalImg || '';
+            let img;
+            if(modalImgSrc){
+                img = document.createElement('img');
+                img.src = modalImgSrc;
+                img.alt = card.querySelector('img') ? card.querySelector('img').alt : '';
+                img.className = 'member-photo';
+                img.onerror = function(){ this.onerror=null; this.src = card.querySelector('img') ? card.querySelector('img').src : ''; };
+            } else {
+                img = card.querySelector('img').cloneNode(true);
+            }
+            const name = card.querySelector('.member-name').textContent;
+            const role = card.querySelector('.member-role').textContent;
+            const cardBioEl = card.querySelector('.member-bio');
+            const cardBioText = cardBioEl ? cardBioEl.textContent : '';
+            const modalBioRaw = card.dataset.modalBio || '';
+            const note = card.dataset.note || '';
+            // modal-specific bio (if provided) handled earlier via modalBioRaw
+
+            modalBody.innerHTML = '';
+            const imgWrap = document.createElement('div');
+            imgWrap.appendChild(img);
+            const meta = document.createElement('div');
+            meta.className = 'meta';
+            // Use modal-specific bio if provided, otherwise use the card's bio text
+            const modalBioHtml = modalBioRaw ? formatNote(modalBioRaw) : escapeHtml(cardBioText).replace(/\r\n|\r|\n/g,'<br>');
+            meta.innerHTML = `<h2 class="glitch-text">${escapeHtml(name)}</h2><p class="member-role">${escapeHtml(role)}</p><p>${modalBioHtml}</p>`;
+            if(note){
+                const noteEl = document.createElement('p');
+                noteEl.id = 'modalNote';
+                noteEl.className = 'modal-note';
+                // format safely: allow newlines (\n), escaped '\\n', and <br>
+                noteEl.innerHTML = formatNote(note);
+                meta.appendChild(noteEl);
+                // Trigger CSS animation on next frame
+                requestAnimationFrame(()=> noteEl.classList.add('show'));
+            }
+            modalBody.appendChild(imgWrap);
+            modalBody.appendChild(meta);
+
+            modal.setAttribute('aria-hidden','false');
+            // trap focus optionally (simple)
+            modalClose.focus();
+        }
+
+        function closeModal(){ modal.setAttribute('aria-hidden','true'); modalBody.innerHTML = ''; }
+
+        // attach click handlers to cards
+        document.querySelectorAll('.member-card').forEach(card=>{
+            card.addEventListener('click', ()=> openModalFromCard(card));
+            card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); openModalFromCard(card); } });
+            card.setAttribute('tabindex','0');
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        modalBackdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
+    })();
+    </script>
+
+    <!-- BGM player: simple persistent audio controls -->
+    <style>
+    /* BGM player styles - minimal, non-intrusive */
+    .bgm-player{position:fixed;right:18px;bottom:18px;z-index:2600;background:rgba(11,11,11,0.75);backdrop-filter:blur(6px);border:1px solid rgba(255,61,148,0.12);padding:10px 12px;border-radius:12px;display:flex;gap:10px;align-items:center;font-family:Rajdhani,monospace;color:#fff}
+    .bgm-player .btn{background:transparent;border:0;color:#fff;cursor:pointer;font-size:16px;padding:6px;border-radius:6px}
+    .bgm-player .btn:focus{outline:2px solid #00B2FF}
+    .bgm-player .vol{width:110px}
+    .bgm-player .label{font-size:12px;opacity:0.85}
+    .bgm-player .seek{display:none}
+    @media(max-width:600px){.bgm-player{right:12px;left:12px;bottom:12px;justify-content:space-between}.bgm-player .vol{width:70px}}
+    </style>
+
+    <div class="bgm-player" id="bgmPlayer" aria-live="polite">
+        <button class="btn" id="bgmToggle" aria-pressed="false" title="Play/Pause">▶</button>
+        <button class="btn" id="bgmMute" aria-pressed="false" title="Mute/Unmute">🔊</button>
+        <div class="label" id="bgmTitle">足立区ストリートギャングテーマ</div>
+        <input type="range" id="bgmVol" class="vol" min="0" max="1" step="0.01" aria-label="Volume">
+        <a id="bgmLink" href="#" style="color:rgba(255,255,255,0.8);font-size:12px;text-decoration:underline;opacity:0.9;margin-left:6px"></a>
+            <audio id="bgmAudio" loop preload="auto" style="display:none">
+            <source src="audio/bgm.mp3" type="audio/mpeg">
+            <!-- fallback to mp4 audio track if present 
+            <source src="images/ストリートギャング.mp4" type="video/mp4">-->
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+    (function(){
+        const audio = document.getElementById('bgmAudio');
+        const toggle = document.getElementById('bgmToggle');
+        const muteBtn = document.getElementById('bgmMute');
+        const vol = document.getElementById('bgmVol');
+        const title = document.getElementById('bgmTitle');
+        const link = document.getElementById('bgmLink');
+
+        // Determine source and set link text
+        const srcEl = audio.querySelector('source');
+        const src = srcEl ? srcEl.getAttribute('src') : '';
+        if(src) link.href = src; else link.style.display = 'none';
+        link.target = '_blank';
+
+        // Load saved prefs. If none, initialize to ~20% and attempt to autoplay (best-effort).
+        const savedVolRaw = localStorage.getItem('bgm_volume');
+        const savedVol = savedVolRaw !== null ? parseFloat(savedVolRaw) : NaN;
+        const savedMuted = localStorage.getItem('bgm_muted');
+        if(!isNaN(savedVol)) {
+            audio.volume = savedVol;
+            vol.value = savedVol;
+        } else {
+            // No saved preference: set initial volume to 20%
+            audio.volume = 0.2;
+            vol.value = 0.2;
+            localStorage.setItem('bgm_volume', String(0.2));
+        }
+        if(savedMuted === 'true'){
+            audio.muted = true; muteBtn.setAttribute('aria-pressed','true'); muteBtn.textContent='🔈';
+        }
+
+        // UI updates
+        function updateToggle(){ toggle.textContent = audio.paused ? '▶' : '⏸'; toggle.setAttribute('aria-pressed', audio.paused ? 'false' : 'true'); }
+        function updateMute(){ muteBtn.textContent = audio.muted ? '🔈' : '🔊'; muteBtn.setAttribute('aria-pressed', audio.muted ? 'true' : 'false'); }
+
+        // Respect autoplay policies: do not auto-play unless user interacted
+        let userInteracted = false;
+        function enableAfterInteraction(){ userInteracted = true; document.removeEventListener('click', enableAfterInteraction); document.removeEventListener('keydown', enableAfterInteraction); }
+        document.addEventListener('click', enableAfterInteraction, {once:false});
+        document.addEventListener('keydown', enableAfterInteraction, {once:false});
+
+        // Attempt to autoplay (best-effort) only if user previously allowed audio.
+        const tryAutoPlay = () => {
+            audio.play().then(()=>{
+                updateToggle();
+                localStorage.setItem('bgm_playing','true');
+            }).catch(()=>{
+                // Autoplay blocked; we'll rely on user to press play. Keep saved state as-is.
+            });
+        };
+        // Only attempt autoplay if user previously granted permission via consent dialog
+        try{
+
+            const player = document.getElementById('bgmPlayer');
+            if(player) player.style.display = '';
+        }catch(e){ /* ignore storage errors */ }
+
+        // Event bindings
+        toggle.addEventListener('click', ()=>{
+            if(audio.paused){ audio.play().then(()=>{ updateToggle(); localStorage.setItem('bgm_playing','true'); }).catch(()=>{ /* blocked */ }); }
+            else { audio.pause(); updateToggle(); localStorage.setItem('bgm_playing','false'); }
+        });
+
+        muteBtn.addEventListener('click', ()=>{
+            audio.muted = !audio.muted; updateMute(); localStorage.setItem('bgm_muted', audio.muted ? 'true' : 'false');
+        });
+
+        vol.addEventListener('input', ()=>{
+            const v = parseFloat(vol.value); audio.volume = v; localStorage.setItem('bgm_volume', String(v));
+        });
+
+        audio.addEventListener('play', updateToggle);
+        audio.addEventListener('pause', updateToggle);
+        audio.addEventListener('volumechange', updateMute);
+
+        // Update title based on available metadata (if any)
+        audio.addEventListener('loadedmetadata', ()=>{
+            const d = audio.duration;
+            if(d && !isNaN(d)) title.textContent = 'BGM';
+        });
+
+        // If source is missing, hide controls gracefully
+        function checkSource(){
+            const hasSource = Array.from(audio.querySelectorAll('source')).some(s=>s.getAttribute('src'));
+            if(!hasSource){ document.getElementById('bgmPlayer').style.display='none'; }
+        }
+        checkSource();
+        // initial UI state
+        updateToggle(); updateMute();
+    })();
+    </script>
+
+    <script src="adachi.js"></script>
+</body>
+</html>
