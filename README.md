@@ -1,1 +1,0 @@
-# Adachi-Ward-Street-Gang.
